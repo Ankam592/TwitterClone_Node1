@@ -1,0 +1,22 @@
+# Node.js
+node_modules/
+.env
+npm-debug.log
+
+# Logs
+logs/
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Build output
+dist/
+build/
+
+# VSCode
+.vscode/
+
+# React
+*.cache
