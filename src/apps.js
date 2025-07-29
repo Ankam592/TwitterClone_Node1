@@ -18,7 +18,7 @@ const __dirname = dirname(__filename);
 //common middlewares
 app.use(                        // middleware
     cors({
-        origin: process.env.CORS_ORIGIN || 'http://localhost:5173' , // what should be allowed and what is not allowed we will mention in .env in CORS_ORIGIN
+        origin: 'https://twitter-clone-xi-bay.vercel.app' , // what should be allowed and what is not allowed we will mention in .env in CORS_ORIGIN
         credentials: true               // allow credentials to be passed
     })                             // one more middleware as cors
 )
