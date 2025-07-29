@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Defect Creation Form</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .container {
+      max-width: 600px;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+    <%- include('partials/navbar.ejs') %>
+    <form action="/WeatherApp/createdefect" method="post">
+    <div class="container">
+        <h2 class="text-center mb-4">Register Defect</h2>
+          <div class="row">
+            <!-- Left Column -->
+            <div class="col-md-6 mb-3">
+              <label for="Summary" class="form-label">Defect Summary</label>
+              <input type="text" name= "Summary" class="form-control" id="Summary" placeholder="Enter defect summary" required>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="description" class="form-label">description</label>
+              <input type="description" name="description" class="form-control" id="description" placeholder="Enter defect description" required>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label for="Reporter" class="form-label">Reporter</label>
+                <input type="text" name="Reporter"  class="form-control" id="Reporter" placeholder=" Reporter" required>
+              </div>
+            <div class="col-md-6 mb-3">
+              <label for="Agile_Team" class="form-label">Agile_Team</label>
+              <input type="Agile_Team" name="Agile_Team" class="form-control" id="Agile_Team" placeholder="Agile_Team" required>
+            </div>
+         
+            <div class="col-md-6 mb-3">
+              <label for="Assignee" class="form-label">Assignee</label>
+              <input type="text" name="Assignee" class="form-control" id="Assignee" placeholder="Assignee" required>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="severity" name="severity" class="form-label">severity</label>
+              <select name="severity" id="severity" class="form-select" required>
+                <option value="" disabled selected>Select severity</option>
+                <option value="S1 - Critical - No workaround">S1 - Critical - No workaround</option>
+                <option value="S2 - Critical - With workaround">S2 - Critical - With workaround</option>
+                <option value="S3 - No Critical - No workaround">S3 - No Critical - No workaround</option>
+                <option value="S4 - Non Critical - With workaround">S4 - Non Critical - With workaround</option>
+                <option value="S5 - Minor Defect">S5 - Minor Defect</option>
+                <option value="S6 - Enhancement">S6 - Enhancement</option>
+              </select>
+            </div>
+           
+            <div class="col-md-6 mb-3">
+              <label for="Priority" name="Priority" class="form-label">Priority</label>
+              <select name="Priority" id="Priority" class="form-select" required>
+                <option value="" disabled selected>Select Priority</option>
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+              </select>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 text-center mb-3">
+              <button type="submit" class="btn btn-warning btn-custom w-25">Register</button>
+            </div>
+          </div>
+        </form>
+      </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
