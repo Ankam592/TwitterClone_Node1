@@ -1,6 +1,6 @@
 import { timeStamp } from "console";
 import mongoose, { Schema } from "mongoose";
-import bcrypt from "bcrypt";
+import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import { type } from "os";
 

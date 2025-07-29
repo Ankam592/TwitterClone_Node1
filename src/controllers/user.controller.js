@@ -1,5 +1,5 @@
 import { User } from "../models/user.models.js"
-import bcrypt from 'bcrypt';
+import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import cookieparser from 'cookie-parser'
 import { fileUpload } from "../models/uploadedFiles.models.js";
