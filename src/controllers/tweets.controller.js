@@ -36,6 +36,7 @@ const editTweet = async (req, res) => {
         const IST = (istTime.toLocaleString("en-IN", { timeZone: "Asia/Kolkata" }));
         const content = req.body.content;
         const file = req.file;
+        console.log(req)
 
         if (req.body?.existed_file) {
             const tweet = await Tweet.updateOne({ filename: req.body.existed_file }, {
