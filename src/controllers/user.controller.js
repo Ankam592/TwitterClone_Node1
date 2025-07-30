@@ -138,6 +138,7 @@ const loginUser = async function (req, res) {
                 const decoded = jwt.verify(token, `${process.env.ACCESS_TOKEN_SECRET}`);
                 res.locals.isAuthenticated = true;
                 res.locals.user = decoded; // Pass user info to views
+                console.log(res.locals.user)
             } catch (err) {
                 res.locals.isAuthenticated = false;
             }
