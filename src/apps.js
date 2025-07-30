@@ -29,7 +29,7 @@ app.use(express.json({       //middleware to receive json type of data from requ
 // we are writing it as middleware because for any request client can ask for any type of data.
 app.use(express.urlencoded({ extended: true }))                  // accepting urlencoded type of data
 //
-app.use(express.static(path.join(__dirname, './public')));
+//app.use(express.static(path.join(__dirname, './public')));
 app.use(cookieParser())            //serve assets like images or css to keep any images in public
 app.use("/WeatherApp/uploads", express.static(path.join(__dirname, "../uploads")));
 // this middleware sets res.locals.user as current user role  and for every request this runs so wherever we go we will be having an idea who logged in and what content to print on html page 
@@ -68,8 +68,8 @@ app.use((req, res, next) => {
 
 
 
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');           //setting up view engine
+// app.set('views', path.join(__dirname, 'views'));
+// app.set('view engine', 'ejs');           //setting up view engine
 
 
 // Refresh cache every 10 minutes
