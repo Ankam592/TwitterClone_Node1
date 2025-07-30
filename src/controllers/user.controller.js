@@ -79,7 +79,7 @@ const registerUser = async function (req, res) {
             email: email,
             username: username,
         },
-            'eyJhbGciOiJIUzI1NiJ9.eyJSb2xlIjoiQWRtaW4iLCJJc3N1ZXIiOiJJc3N1ZXIiLCJVc2VybmFtZSI6IkphdmFJblVzZSIsImV4cCI6MTcyNTQ4NTE5MSwiaWF0IjoxNzI1NDg1MTkxfQ.1PC4lxzqGzLlYYEhmDuprB8kCJhuVadBeAiyLgin354',
+           `${process.env.ACCESS_TOKEN_SECRET}`,
             {
                 expiresIn: '2h'
             })
@@ -121,7 +121,7 @@ const loginUser = async function (req, res) {
             _id: existedUser._id,
             email: email,
         },
-            'eyJhbGciOiJIUzI1NiJ9.eyJSb2xlIjoiQWRtaW4iLCJJc3N1ZXIiOiJJc3N1ZXIiLCJVc2VybmFtZSI6IkphdmFJblVzZSIsImV4cCI6MTcyNTQ4NTE5MSwiaWF0IjoxNzI1NDg1MTkxfQ.1PC4lxzqGzLlYYEhmDuprB8kCJhuVadBeAiyLgin354',
+            `${process.env.ACCESS_TOKEN_SECRET}`,
             {
                 expiresIn: '2h'
             })
