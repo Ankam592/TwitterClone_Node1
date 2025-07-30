@@ -54,7 +54,7 @@ app.use((req, res, next) => {
                 res.locals.user = decoded; // Pass user info to views
             } catch (err) {
                 res.locals.isAuthenticated = false;
-                return res.redirect('/WeatherApp/loginPage')
+               // return res.redirect('/WeatherApp/loginPage')
             }
         }
         else {
