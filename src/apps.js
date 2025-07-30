@@ -58,7 +58,7 @@ app.use((req, res, next) => {
             }
             else {
                 res.locals.isAuthenticated = false;
-                return res.redirect('/WeatherApp/loginPage');
+                return res.redirect('/WeatherApp/');
             }
         }
         console.log('isAuthenticated:', res.locals.isAuthenticated);
