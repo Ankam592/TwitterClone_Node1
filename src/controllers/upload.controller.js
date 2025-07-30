@@ -79,32 +79,32 @@ const deleteFile = async function (req, res) {
 }
 
 
-const filesPage = async function (req, res) {
-   const { email, role } = res.locals.user
-   const existFile = await fileUpload.find({});
-   if (!existFile) {
-      return res.status(404).send("No Files")
-   }
-   else {
-      if (role == 'admin') {
-         return res.status(201).render('Files', { 'Files': existFile })
-      }
-      else if (role == 'editor') {
-         const MyFile = await fileUpload.find({ email: fileUpload.email });
-         console.log(MyFile)
-         if (!MyFile) {
-            return res.status(404).send("No Files")
-         }
-         else {
-            return res.status(201).render('Files', { 'Files': MyFile })
-         }
-      }
-   }
-}
+// const filesPage = async function (req, res) {
+//    const { email, role } = res.locals.user
+//    const existFile = await fileUpload.find({});
+//    if (!existFile) {
+//       return res.status(404).send("No Files")
+//    }
+//    else {
+//       if (role == 'admin') {
+//          return res.status(201).render('Files', { 'Files': existFile })
+//       }
+//       else if (role == 'editor') {
+//          const MyFile = await fileUpload.find({ email: fileUpload.email });
+//          console.log(MyFile)
+//          if (!MyFile) {
+//             return res.status(404).send("No Files")
+//          }
+//          else {
+//             return res.status(201).render('Files', { 'Files': MyFile })
+//          }
+//       }
+//    }
+// }
 
-const uploadPage = async function (req, res) {
-   return res.render('uploadPage')
-}
+// const uploadPage = async function (req, res) {
+//    return res.render('uploadPage')
+// }
 
 const uploadFile = async function (req, res) {
    try {
@@ -136,4 +136,4 @@ const uploadFile = async function (req, res) {
 }
 
 
-export { profilePic, uploadFile, uploadPage, filesPage, deleteFile, downloadFile }
+export { profilePic, uploadFile, deleteFile, downloadFile }

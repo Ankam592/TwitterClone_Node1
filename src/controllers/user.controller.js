@@ -40,21 +40,21 @@ const editUser = async function (req, res) {
 }
 
 
-const editPage = async function (req, res) {
-    const id = req.params.id;
-    const existedUser = await User.findById(id);
-    try {
-        return res.status(200).render('editUser', { 'user': existedUser });
-    }
-    catch (error) {
-        return res.status(404).send("some error occured!")
-    }
-}
+// const editPage = async function (req, res) {
+//     const id = req.params.id;
+//     const existedUser = await User.findById(id);
+//     try {
+//         return res.status(200).render('editUser', { 'user': existedUser });
+//     }
+//     catch (error) {
+//         return res.status(404).send("some error occured!")
+//     }
+// }
 
-const registerPage = async function (req, res) {
-    res.render('register');
+// const registerPage = async function (req, res) {
+//     res.render('register');
 
-}
+// }
 const registerUser = async function (req, res) {
     try {
         console.log(req)
@@ -100,10 +100,10 @@ const registerUser = async function (req, res) {
     }
 }
 
-const loginPage = async function (req, res) {
-    console.log("Connected to backend and DB")
-    return res.render('login');
-}
+// const loginPage = async function (req, res) {
+//     console.log("Connected to backend and DB")
+//     return res.render('login');
+// }
 
 const loginUser = async function (req, res) {
 
@@ -245,4 +245,4 @@ const deleteUser = async function (req, res) {
     return res.status(200).redirect('/WeatherApp/AllUsers');
 }
 
-export { unfollowUser, followUser, currentUser, registerUser, loginUser, registerPage, loginPage, logoutUser, userProfile, deleteUser, editPage, editUser }
+export { unfollowUser, followUser, currentUser, registerUser, loginUser, logoutUser, userProfile, deleteUser, editUser }
