@@ -32,6 +32,12 @@ app.use(express.urlencoded({ extended: true }))                  // accepting ur
 //app.use(express.static(path.join(__dirname, './public')));
 app.use(cookieParser())            //serve assets like images or css to keep any images in public
 app.use("/WeatherApp/uploads", express.static(path.join(__dirname, "../uploads")));
+
+
+app.use(express.static(path.join(__dirname, "../frontend/dist")));
+app.get("/WeatherApp/*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../frontend/dist/index.html"));
+});
 // this middleware sets res.locals.user as current user role  and for every request this runs so wherever we go we will be having an idea who logged in and what content to print on html page 
 // eg: when we login we send isauthenticated information to ejs file by keeping in res.locals so we can check condition and print log out button or login button accordingly
 app.use((req, res, next) => {
@@ -58,7 +64,7 @@ app.use((req, res, next) => {
             }
             else {
                 res.locals.isAuthenticated = false;
-                return res.redirect('/WeatherApp/');
+                return res.redirect('/WeatherApp/loginPage');
             }
         }
         console.log('isAuthenticated:', res.locals.isAuthenticated);

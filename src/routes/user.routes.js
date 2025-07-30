@@ -15,7 +15,7 @@ import {AllComments,getBookMarkedTweets,editTweet,getTweetById,getTweets,addComm
 
 const router = Router()
 
-router.route("/").get(homePage)
+//router.route("/").get(homePage)
 
 router.route("/register").post(registerUser);       //inside post add fields method in upload object),
 //router.route("/registerPage").get(registerPage);                                                                         // serving it at register and it is post request
