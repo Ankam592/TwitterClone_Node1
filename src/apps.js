@@ -47,6 +47,7 @@ app.use((req, res, next) => {
     }
     else {
         const token = req.cookies.token;
+        console.log('token',token)
         if (token) {
             try {
                 const decoded = jwt.verify(token, `${process.env.ACCESS_TOKEN_SECRET}`);
@@ -65,7 +66,7 @@ app.use((req, res, next) => {
             else {
                 res.locals.isAuthenticated = false;
                 console.log(res.locals.isAuthenticated)
-                return res.redirect('/WeatherApp/loginPage');
+                //return res.redirect('/WeatherApp/loginPage');
             }
         }
         console.log('isAuthenticated:', res.locals.isAuthenticated);
