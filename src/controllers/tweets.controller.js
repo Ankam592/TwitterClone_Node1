@@ -107,10 +107,10 @@ const AllComments = async (req,res)=>
 {
     let comments = []
     const AllTweets = await Tweet.find();
+    console.log(AllTweets)
     AllTweets.map((tweet)=>
     {
-        comments = [...tweet.Comments]
-        comments = [...comments,...tweet.ToxicComments]
+        comments = [...comments, ...tweet.Comments, ...tweet.ToxicComments];
     })
     console.log(comments)
     if(AllTweets)

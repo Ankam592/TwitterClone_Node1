@@ -16,13 +16,15 @@ const __dirname = dirname(__filename);
 
 
 //common middlewares
-app.use(                        // middleware
-    cors({
-        origin: 'https://twitter-clone-xi-bay.vercel.app' , // what should be allowed and what is not allowed we will mention in .env in CORS_ORIGIN
-        credentials: true               // allow credentials to be passed
-    })                             // one more middleware as cors
-)
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://twitter-clone-xi-bay.vercel.app"
+];
 
+app.use(cors({
+  origin: allowedOrigins,
+  credentials: true, // if using cookies
+}));
 app.use(express.json({       //middleware to receive json type of data from request
     limit: "16kb"
 }))
