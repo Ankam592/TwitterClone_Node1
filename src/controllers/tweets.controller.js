@@ -87,7 +87,7 @@ const addComment = async (req, res) => {
         const cur_comment = req.body.curcomment;
         const toxicity = req.body.toxic;
         const ts = req.body.toxicScore;
-        console.log(toxicity)
+     
         const time = getCurrentTime();
         const twt = await Tweet.findById(tweet_id);
         if (twt) {

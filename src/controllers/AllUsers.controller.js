@@ -13,7 +13,7 @@ const AllUsers = async function (req, res) {
 
 const searchUser = async (req, res) => {
   const searchText = (req.params.input);
-  console.log(searchText)
+
   const Regex = new RegExp(`\\s*${searchText}\\s*`, 'mi');  
 // for allowing whitespace-\\s*  and m for multiline and i for case-insensitive  
   var membersEmp;
