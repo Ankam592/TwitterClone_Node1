@@ -204,6 +204,7 @@ const postTweet = async (req, res) => {
         const IST = (istTime.toLocaleString("en-IN", { timeZone: "Asia/Kolkata" }));
         const content = req.body.content;
         const file = req.file;
+        const email = req.body.email;
         console.log(res.locals.user.email)
         const fileupload = await fileUpload.create({
             filename: file.filename,
@@ -211,7 +212,7 @@ const postTweet = async (req, res) => {
             path: file.path,
             mimetype: file.mimetype,
             size: file.size,
-            uploadedBy: res.locals.user.email,
+            uploadedBy: email,
             uploadedAt: IST
         })
         const uploadFile = await fileUpload.findById(fileupload._id);
@@ -224,7 +225,7 @@ const postTweet = async (req, res) => {
             likes: [],
             Comments: [],
             bookMarks: [],
-            twitter_handle: res.locals.user.email,
+            twitter_handle: email,
             postedAt: IST,
             fileId: fileupload._id,
             filename: file.filename
