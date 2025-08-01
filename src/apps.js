@@ -3,6 +3,8 @@ import cors from 'cors'
 import cookieParser from "cookie-parser"
 import path from 'path'
 import jwt from 'jsonwebtoken'
+import { Logger } from "../utils/logger.js"
+
 
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
@@ -49,13 +51,14 @@ app.use((req, res, next) => {
     }
     else {
         const token = req.cookies.token;
-        console.log('token',token)
+        console.log('cookies',req.cookies)
         if (token) {
             try {
                 const decoded = jwt.verify(token, `${process.env.ACCESS_TOKEN_SECRET}`);
                 res.locals.isAuthenticated = true;
                 res.locals.user = decoded; // Pass user info to views
                 console.log("this is locals",res.locals)
+                Logger.info("locals",req.locals)
             } catch (err) {
                 res.locals.isAuthenticated = false;
                // return res.redirect('/WeatherApp/loginPage')
@@ -90,6 +93,7 @@ setInterval(refreshCache, 10 * 60 * 1000);
 //import routes
 
 import { router } from "./routes/user.routes.js";
+import { loggers } from "winston"
 
 
 

@@ -204,6 +204,7 @@ const postTweet = async (req, res) => {
         const IST = (istTime.toLocaleString("en-IN", { timeZone: "Asia/Kolkata" }));
         const content = req.body.content;
         const file = req.file;
+        console.log(res.locals.user.email)
         const fileupload = await fileUpload.create({
             filename: file.filename,
             originalname: file.originalname,
