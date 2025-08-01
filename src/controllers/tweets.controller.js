@@ -36,7 +36,7 @@ const editTweet = async (req, res) => {
         const IST = (istTime.toLocaleString("en-IN", { timeZone: "Asia/Kolkata" }));
         const content = req.body.content;
         const file = req.file;
-        console.log(req)
+  
 
         if (req.body?.existed_file) {
             const tweet = await Tweet.updateOne({ filename: req.body.existed_file }, {
@@ -107,12 +107,12 @@ const AllComments = async (req,res)=>
 {
     let comments = []
     const AllTweets = await Tweet.find();
-    console.log(AllTweets)
+
     AllTweets.map((tweet)=>
     {
         comments = [...comments, ...tweet.Comments, ...tweet.ToxicComments];
     })
-    console.log(comments)
+
     if(AllTweets)
     {
         return res.status(201).json({'comments':comments})
@@ -140,7 +140,7 @@ const engageContent = async (req, res) => {
 
                     bookmark => bookmark != email
                 )
-                console.log(tweet.bookmark)
+           
                 // tweet['likes'] = [...likess]
                 await tweet.save()
             }
@@ -149,7 +149,7 @@ const engageContent = async (req, res) => {
 
                     like => like != email
                 )
-                console.log(tweet.likes)
+      
                 // tweet['likes'] = [...likess]
                 await tweet.save()
             }

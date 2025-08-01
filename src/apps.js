@@ -51,7 +51,7 @@ app.use((req, res, next) => {
     }
     else {
         const token = req.cookies.token;
-        console.log('cookies',req.cookies)
+        console.log('cookies',req)
         if (token) {
             try {
                 const decoded = jwt.verify(token, `${process.env.ACCESS_TOKEN_SECRET}`);

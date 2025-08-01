@@ -65,7 +65,7 @@ const deleteFile = async function (req, res) {
    const filepath = join(__dirname, '../uploads', existFile.filename)
 
    const deletedFile = await fileUpload.deleteOne({ id: fileUpload._id })
-   console.log(deletedFile)
+
    // Delete the file
    //const filepath = path.join(__dirname,'..',existFile.filename)
    //console.log(path)

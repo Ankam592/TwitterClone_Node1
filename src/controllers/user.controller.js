@@ -1,6 +1,7 @@
 import { User } from "../models/user.models.js"
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
+import { Logger } from "../../utils/logger.js";
 import cookieparser from 'cookie-parser'
 import { fileUpload } from "../models/uploadedFiles.models.js";
 
@@ -40,26 +41,12 @@ const editUser = async function (req, res) {
 }
 
 
-// const editPage = async function (req, res) {
-//     const id = req.params.id;
-//     const existedUser = await User.findById(id);
-//     try {
-//         return res.status(200).render('editUser', { 'user': existedUser });
-//     }
-//     catch (error) {
-//         return res.status(404).send("some error occured!")
-//     }
-// }
 
-// const registerPage = async function (req, res) {
-//     res.render('register');
-
-// }
 const registerUser = async function (req, res) {
     try {
-        console.log(req)
+    
         var { username, email, Password, confirmPassword, bio } = req.body.data;
-        console.log(req.body)
+
         if (Object.keys(req.body.data).length === 0) {
             return res.status(400).send("Invalid Input")
         }
@@ -100,10 +87,6 @@ const registerUser = async function (req, res) {
     }
 }
 
-// const loginPage = async function (req, res) {
-//     console.log("Connected to backend and DB")
-//     return res.render('login');
-// }
 
 const loginUser = async function (req, res) {
 
@@ -138,14 +121,14 @@ const loginUser = async function (req, res) {
                 const decoded = jwt.verify(token, `${process.env.ACCESS_TOKEN_SECRET}`);
                 res.locals.isAuthenticated = true;
                 res.locals.user = decoded; // Pass user info to views
-                console.log("hii",res.locals,decoded)
+                Logger.info("locals in login page",res.locals,decoded)
             } catch (err) {
                 res.locals.isAuthenticated = false;
             }
         } else {
             res.locals.isAuthenticated = false;
         }
-        console.log(res);
+   
         return res.status(200).json({ "user": existedUser })  // we are sending only json data to front end, we dont render as react will do that
     } else {
         // Passwords don't match
@@ -165,7 +148,7 @@ const logoutUser = async function (req, res) {
 }
 
 const currentUser = async (req, res) => {
-    console.log(req);
+
     try {
         res.status(200).json({ 'userdata': res.locals })
     }
@@ -177,9 +160,9 @@ const currentUser = async (req, res) => {
 
 const userProfile = async function (req, res) {
     const email = req.params.email
-    console.log(email)
+
     const existUser = await User.find({ email: email });
-    console.log(existUser)
+
     if (!existUser) {
         return res.status(404).send("No particular user")
     }
@@ -191,13 +174,13 @@ const userProfile = async function (req, res) {
 const followUser = async function (req, res) {
     const email = req.params.email
     const cur_user = res.locals.user.email;
-    console.log(email)
+
     const existUser = await User.findOne({ email: email });
     const curexistUser = await User.findOne({ email: cur_user })
     if (!curexistUser) {
         return res.status(404).send("No particular user")
     }
-    console.log(existUser)
+
     if (!existUser) {
         return res.status(404).send("No particular user")
     }
@@ -235,14 +218,14 @@ const unfollowUser = async function (req, res) {
 
 const deleteUser = async function (req, res) {
     const id = req.params.id
-    console.log(id)
+
     const existUser = await User.findOne({ id: User._id });
-    console.log(existUser)
+
     if (!existUser) {
         return res.status(404).send("No User to delete");
     }
     const deletedUser = await User.deleteOne({ id: User._id })
-    console.log(deleteUser)
+
     return res.status(200).redirect('/WeatherApp/AllUsers');
 }
 
