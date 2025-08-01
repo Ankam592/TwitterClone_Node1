@@ -206,6 +206,7 @@ const postTweet = async (req, res) => {
         const file = req.file;
         const email = req.body.email;
         console.log(res.locals.user.email)
+        console.log(email)
         const fileupload = await fileUpload.create({
             filename: file.filename,
             originalname: file.originalname,
@@ -221,7 +222,7 @@ const postTweet = async (req, res) => {
         }
         const tweet = await Tweet.create({
             Content: content,
-            user_Tweeted: res.locals.user.email,
+            user_Tweeted: email,
             likes: [],
             Comments: [],
             bookMarks: [],

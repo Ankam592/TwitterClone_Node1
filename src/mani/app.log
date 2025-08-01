@@ -12,3 +12,28 @@
 {"level":"\u001b[32minfo\u001b[39m","message":"GET Request","timestamp":"2024-09-23T06:42:43.510Z"}
 {"level":"\u001b[32minfo\u001b[39m","message":"GET Request","timestamp":"2024-10-13T14:28:16.805Z"}
 {"level":"\u001b[32minfo\u001b[39m","message":"GET Request","timestamp":"2024-10-13T14:30:21.618Z"}
+{"isAuthenticated":true,"level":"\u001b[32minfo\u001b[39m","message":"locals in login page","timestamp":"2025-08-01T17:21:59.782Z","user":{"_id":"688b89b22a045fdbcd87075a","email":"bhawinchinthala30112008@gmail.com","exp":1754076119,"iat":1754068919}}
+{"level":"\u001b[32minfo\u001b[39m","message":"locals","timestamp":"2025-08-01T17:22:00.096Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"locals","timestamp":"2025-08-01T17:22:02.303Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"locals","timestamp":"2025-08-01T17:22:04.080Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"locals","timestamp":"2025-08-01T17:22:17.822Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"locals","timestamp":"2025-08-01T17:22:23.702Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"locals","timestamp":"2025-08-01T17:22:25.299Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"locals","timestamp":"2025-08-01T17:22:28.087Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"locals","timestamp":"2025-08-01T17:22:35.959Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"locals","timestamp":"2025-08-01T17:22:36.395Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"locals","timestamp":"2025-08-01T17:22:37.087Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"locals","timestamp":"2025-08-01T17:22:38.571Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"locals","timestamp":"2025-08-01T17:22:40.152Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"locals","timestamp":"2025-08-01T17:24:31.378Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"locals","timestamp":"2025-08-01T17:24:31.554Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"locals","timestamp":"2025-08-01T17:24:31.779Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"locals","timestamp":"2025-08-01T17:24:31.932Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"locals","timestamp":"2025-08-01T17:24:43.877Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"locals","timestamp":"2025-08-01T17:25:07.370Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"locals","timestamp":"2025-08-01T17:25:13.037Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"locals","timestamp":"2025-08-01T17:25:13.198Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"locals","timestamp":"2025-08-01T17:25:17.795Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"locals","timestamp":"2025-08-01T17:29:53.759Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"locals","timestamp":"2025-08-01T17:30:20.690Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"locals","timestamp":"2025-08-01T17:30:20.896Z"}
