@@ -93,7 +93,7 @@ const addComment = async (req, res) => {
         if (twt) {
             toxicity ? twt.ToxicComments.push({ 'email': res.locals.user.email, 'comment': cur_comment, 'toxicScore': ts ,'time':time}) : twt.Comments.push({ 'email': res.locals.user.email, 'comment': cur_comment, 'toxicScore': ts ,'time':time})
             twt.save();
-            const out = toxicity ? { 'message': 'Sorry we do not encourage toxic comments!', 'tweetId': tweet_id } : { 'message': 'Comment Added Successfully', 'tweetId': tweet_id }
+            const out =     toxicity ? { 'message': 'Sorry we do not encourage toxic comments!', 'tweetId': tweet_id } : { 'message': 'Comment Added Successfully', 'tweetId': tweet_id }
             return res.status(201).json(out)
         }
         return res.status(401).json({ 'message': "some thing went wrong!" })

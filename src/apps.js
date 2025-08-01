@@ -55,6 +55,7 @@ app.use((req, res, next) => {
                 const decoded = jwt.verify(token, `${process.env.ACCESS_TOKEN_SECRET}`);
                 res.locals.isAuthenticated = true;
                 res.locals.user = decoded; // Pass user info to views
+                console.log(res.locals)
             } catch (err) {
                 res.locals.isAuthenticated = false;
                // return res.redirect('/WeatherApp/loginPage')
